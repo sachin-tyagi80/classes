@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Postion</title>
+    <style>
+      .container {
+        border: 10px solid black;
+        height: 800px;
+        position: relative;
+      }
+      .box {
+        height: 150px;
+        width: 150px;
+      }
+      #first {
+        position: static;
+        top: 40px;
+      }
+      #second {
+        position: relative;
+        top: 50px;
+      }
+      #third {
+        position: absolute;
+        top: 200px;
+      }
+      #fourth {
+        position: sticky;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS POSITION PROPERTY</h1>
+    <div class="container">
+      <img src="image1.avif" alt="first" class="box" id="fifth" />
+      <img src="image2.avif" alt="second" class="box" id="second" />
+      <img src="image3.avif" alt="third" class="box" id="third" />
+      <img src="image4.avif" alt="fourth" class="box" id="fourth" />
+      <img src="image5.avif" alt="fifth" class="box" id="fifth" />
+    </div>
+    <div class="container2" style="height: 880px; border: 1px solid black">
+      this is a second container
+    </div>
+  </body>
+</html>

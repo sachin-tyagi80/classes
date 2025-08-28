@@ -1,0 +1,39 @@
+h1 {
+  color: red;
+  font-size: medium;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  text-decoration-color: aliceblue;
+  text-shadow: 2px 2px 3px red;
+}
+h2 {
+  color: rgb(226, 139, 26);
+}
+h3 {
+  color: blue;
+}
+.first {
+  color: aqua;
+  border: 1px solid black;
+  height: 300px;
+  width: 300;
+}
+#second {
+  color: blueviolet;
+  background-color: bisque;
+  border: 2px solid black;
+  height: 200px;
+  width: 200px;
+  background-image: url(photo-1755090030899-800ee2e4aa06.avif);
+  background-size: black;
+}
+p {
+  color: blueviolet;
+  font-family: "Lucide Sans";
+  font-style: italic;
+  word-spacing: 10px;
+}
