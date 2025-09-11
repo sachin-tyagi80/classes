@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pseudo classes</title>
+    <style>
+      button {
+        border: none;
+        background-color: blue;
+        color: white;
+        height: 50px;
+        width: 100px;
+      }
+      button:hover {
+        background-color: red;
+      }
+      button:active {
+        background-color: green;
+      }
+      input:focus {
+        border-color: yellow;
+        outline: none;
+      }
+      a:visited {
+        background-color: red;
+        color: red;
+      }
+      a:hover {
+        background-color: yellow;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li:nth-child(even) {
+        background-color: salmon;
+      }
+      ul li:nth-child(odd) {
+        background-color: skyblue;
+      }
+      ul li:first-child {
+        color: red;
+      }
+      ul li:last-child {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hover effect</h2>
+    <button>Click me!</button><br />
+    <br />
+    <input type="text" placeholder="click to see focus effect" />
+    <a href="" target="_blank">click here</a>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ul>
+  </body>
+</html>
