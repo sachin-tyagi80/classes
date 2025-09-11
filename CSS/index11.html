@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Store</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2efef;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      /* Layout */
+      .container {
+        display: flex;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar h3 {
+        margin-bottom: 15px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 12px 0;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .sidebar ul li a:hover {
+        color: #007bff;
+      }
+
+      /* Products */
+      .products {
+        flex: 1;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .product-card {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .product-card h4 {
+        margin: 10px 0;
+      }
+
+      .product-card p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .product-card button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .product-card button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">My Store</div>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="#">Electronics</a></li>
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Home & Kitchen</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x150" alt="Product Image" />
+          <h3>Product 1</h3>
+          <p>This is a great product for your needs.</p>
+          <button>Buy Now</button>
+        </div>
+
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x150" alt="Product Image" />
+          <h4>Product 2</h4>
+          <p>This is a great product for your needs.</p>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
