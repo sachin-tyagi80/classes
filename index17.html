@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chess Board</title>
     <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #eee;
+      }
+
       .chessboard {
         width: 480px;
         height: 480px;
@@ -12,7 +21,6 @@
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(8, 1fr);
         border: 5px solid black;
-        justify-content: center;
       }
 
       .chessboard div {
@@ -66,7 +74,7 @@
       <div class="white"></div>
       <div class="black"></div>
       <div class="white"></div>
-      <!-- Row 5 -->
+
       <div class="white"></div>
       <div class="black"></div>
       <div class="white"></div>

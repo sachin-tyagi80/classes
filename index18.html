@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Rocket Animation</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden; /* Prevents scrollbars when rocket goes out */
+      }
+
+      .rocket {
+        width: 100px;
+        animation: launch 5s ease-in-out infinite;
+      }
+
+      @keyframes launch {
+        0% {
+          transform: translateY(0);
+        }
+        80% {
+          transform: translateY(-110vh); /* Rocket goes beyond screen */
+        }
+        100% {
+          transform: translateY(0); /* Comes back down smoothly */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="jaipur.jpg" alt="Rocket" class="rocket" />
+  </body>
+</html>
