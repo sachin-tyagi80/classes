@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Button</title>
+
+    <style>
+      button {
+        background-color: skyblue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: black;
+      }
+
+      /* Responsive - full width on small screens */
+      @media (max-width: 600px) {
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button>Click Me</button>
+  </body>
+</html>
