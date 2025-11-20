@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="head">Hello World</h2>
+    <button onclick="change()">Click Me</button>
+
+    <style>
+      .highlight {
+        color: white;
+        background: black;
+      }
+    </style>
+
+    <script>
+      function change() {
+        document.body.style.background = "lightblue";
+        document.getElementById("head").classList.add("highlight");
+      }
+    </script>
+  </body>
+</html>

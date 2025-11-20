@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This is my first js code</h1>
+    <script>
+      let a = new Date();
+      let name = prompt("Enter your name");
+      let hour = a.getHours();
+      let greeting;
+      if (hour >= 18) {
+        greeting = "Good Evening";
+      } else if (hour >= 12) {
+        greeting = "Good Afternoon";
+      } else if (hour >= 4) {
+        greeting = "Good Morning";
+      } else {
+        greeting = "Good Night";
+      }
+
+      document.write(`<h1>Hello ${name} ${greeting} </h1> `);
+    </script>
+  </body>
+</html>

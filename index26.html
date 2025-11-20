@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML vs innerText vs textContent</title>
+  </head>
+  <body>
+    <h2>DOM Text Property Example</h2>
+
+    <div id="demo">Hello <span style="display: none">Hidden</span> World</div>
+
+    <script>
+      const el = document.getElementById("demo");
+
+      console.log("innerHTML:", el.innerHTML);
+      // Hello <span style="display:none">Hidden</span> World
+
+      console.log("innerText:", el.innerText);
+      // Hello World
+
+      console.log("textContent:", el.textContent);
+      // Hello Hidden World
+    </script>
+  </body>
+</html>
