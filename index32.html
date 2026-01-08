@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuiceFriend Post</title>
+    <style>
+      body {
+        font-family: poppins;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .box {
+        width: 360px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #00000015;
+      }
+      textarea,
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 7px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+      button {
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      #preview img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 6px;
+      }
+      .post {
+        background: #f7f9fc;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        margin-top: 15px;
+        position: relative;
+      }
+      .post img {
+        width: 100%;
+        border-radius: 6px;
+        margin-top: 5px;
+      }
+      .del {
+        background: #e74c3c;
+        width: auto;
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 5px;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+      .time {
+        font-size: 11px;
+        color: #555;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h3>Create Post</h3>
+      <textarea id="text" placeholder="What do you want to post?"></textarea>
+
+      <input type="file" id="image" accept="image/*" onchange="showPreview()" />
+      <div id="preview"></div>
+
+      <button onclick="submitPost()">Post</button>
+
+      <h3>Posts</h3>
+      <div id="posts"></div>
+    </div>
+
+    <script>
+      function showPreview() {
+        const f = image.files[0];
+        if (f) {
+          preview.innerHTML = <img src="${URL.createObjectURL(f)}" />;
+        }
+      }
+
+      function submitPost() {
+        const t = text.value.trim();
+        const f = image.files[0];
+        if (!t && !f) {
+          alert("Post can't be empty");
+          return;
+        }
+
+        let p = document.createElement("div");
+        p.className = "post";
+
+        if (t) p.innerHTML = <p>${t}</p>;
+        if (f) p.innerHTML += <img src="${URL.createObjectURL(f)}" />;
+
+        p.innerHTML += <p class="time">${new Date().toLocaleString()}</p>;
+        p.innerHTML += (
+          <button class="del" onclick="this.parentElement.remove()">
+            Delete
+          </button>
+        );
+
+        posts.prepend(p);
+        text.value = "";
+        preview.innerHTML = "";
+        image.value = "";
+      }
+    </script>
+  </body>
+</html>

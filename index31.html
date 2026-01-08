@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invoice Management System</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      input {
+        margin: 5px;
+        padding: 6px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #bbb;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background: #e6e6e6;
+      }
+      .delete-btn {
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .total-row td {
+        font-weight: bold;
+        background: #f5f5f5;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Invoice Management System</h2>
+
+    <!-- Input Fields -->
+    <input type="text" id="invNo" placeholder="Invoice Number" />
+    <input type="text" id="custName" placeholder="Customer Name" />
+    <input type="text" id="itemName" placeholder="Item Name" />
+    <input type="number" id="qty" placeholder="Quantity" />
+    <input type="number" id="price" placeholder="Price per Item" />
+
+    <button onclick="addInvoice()">Add Item</button>
+
+    <h3>Invoice Details</h3>
+
+    <table id="invoiceTable">
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <script>
+      let invoices = [];
+
+      function addInvoice() {
+        let item = document.getElementById("itemName").value.trim();
+        let qty = document.getElementById("qty").value.trim();
+        let price = document.getElementById("price").value.trim();
+
+        // Validation
+        if (!item || !qty || !price) {
+          alert("All fields are required!");
+          return;
+        }
+        if (qty <= 0 || price <= 0) {
+          alert("Quantity & Price must be positive!");
+          return;
+        }
+
+        let total = qty * price;
+
+        invoices.push({
+          item,
+          qty: Number(qty),
+          price: Number(price),
+          total,
+        });
+
+        displayInvoices();
+
+        // Clear fields
+        document.getElementById("itemName").value = "";
+        document.getElementById("qty").value = "";
+        document.getElementById("price").value = "";
+      }
+
+      function displayInvoices() {
+        let table = document.getElementById("invoiceTable");
+
+        // Reset table with header
+        table.innerHTML = `
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        `;
+
+        let grandTotal = 0;
+
+        invoices.forEach((inv, index) => {
+          grandTotal += inv.total;
+
+          table.innerHTML += `
+                <tr>
+                    <td>${inv.item}</td>
+                    <td>${inv.qty}</td>
+                    <td>₹${inv.price}</td>
+                    <td>₹${inv.total}</td>
+                    <td><button class="delete-btn" onclick="deleteInvoice(${index})">Delete</button></td>
+                </tr>
+            `;
+        });
+
+        // Add Grand Total Row
+        table.innerHTML += `
+            <tr class="total-row">
+                <td colspan="3">Grand Total:</td>
+                <td colspan="2">₹${grandTotal}</td>
+            </tr>
+        `;
+      }
+
+      function deleteInvoice(i) {
+        invoices.splice(i, 1);
+        displayInvoices();
+      }
+    </script>
+  </body>
+</html>
